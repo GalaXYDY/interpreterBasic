@@ -9,7 +9,7 @@ public class Print extends Operator {
     public void exec(Interpreter inte) {
         Object res;
         try {
-            res = Expression.eval(code);
+            res = Expression.eval(inte.getVars(), code);
             System.out.println(res);
         } catch (ScriptException e) {
             e.printStackTrace();
