@@ -3,12 +3,16 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Interpreter {
-    TreeMap<Integer, Operator> code = new TreeMap<>();
-    Map<String, Double> vars = new HashMap<>();
-    Integer curLine;
+    private TreeMap<Integer, Operator> code = new TreeMap<>();
+    private Map<String, Double> vars = new HashMap<>();
+    private Integer curLine;
 
     public void next() {
         curLine = code.higherKey(curLine);
+    }
+
+    public void goTo(int line) {
+        curLine = line;
     }
 
     public void run() {
